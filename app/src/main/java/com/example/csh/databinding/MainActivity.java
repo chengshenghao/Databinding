@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
         user.firstName = "Victor";
         user.lastName = "Fang";
         user.phone = "13333333333";
-        user.isShowPhone = false;
+        user.isShowPhone = true;
         // 绑定数据
         binding.setUser(user);
 
