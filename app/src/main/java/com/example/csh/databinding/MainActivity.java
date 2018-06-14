@@ -6,6 +6,7 @@ import android.os.Bundle;
 
 import com.example.csh.databinding.databinding.ActivityMainBinding;
 
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -23,9 +24,9 @@ public class MainActivity extends AppCompatActivity {
         binding.setUser(user);
         // 绑定方法和监听
         MyHandler handler = new MyHandler();
-//        MyTask task = new MyTask(this);
+        MyTask task = new MyTask(this);
         binding.setHandler(handler);
-//        binding.setTask(task);
+        binding.setTask(task);
 
     }
 }

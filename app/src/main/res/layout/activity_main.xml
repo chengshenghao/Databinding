@@ -1,4 +1,5 @@
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
@@ -9,6 +10,14 @@
         <variable
             name="user"
             type="com.example.csh.databinding.User" />
+
+        <variable
+            name="handler"
+            type="com.example.csh.databinding.MyHandler"/>
+
+        <variable
+            name="task"
+            type="com.example.csh.databinding.MyTask"/>
     </data>
 
     <LinearLayout
@@ -33,6 +42,20 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@{user.getFullName(user.firstName, user.lastName)}" /> <!--调用User类里面的获取全名的方法-->
+        <!--事件绑定-->
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ShowToast"
+            android:onClick="@{handler::showTost}"/>
+
+        <!-- 监听绑定 使用lambda表达式 -->
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="run"
+            android:onClick="@{() -> handler.onEventListenerExecute(task)}"/>
+
     </LinearLayout>
 
 
